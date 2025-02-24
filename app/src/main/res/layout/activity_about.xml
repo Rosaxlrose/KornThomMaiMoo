@@ -1,0 +1,164 @@
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- ภาษา -->
+        <LinearLayout
+            android:id="@+id/languageBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            android:background="@drawable/language_bg"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="15dp">
+
+            <TextView
+                android:id="@+id/langTH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" TH"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/krub"
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:tag="th"/>
+
+            <TextView
+                android:id="@+id/langCH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="|    CH"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/krub"
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:tag="ch"/>
+
+            <TextView
+                android:id="@+id/langEN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="|    EN"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/krub"
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:tag="en"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="150dp"
+                android:fontFamily="@font/krubmedium"
+                android:text="ประวัติความเป็นมา"
+                android:textColor="#FF7352"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="260dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+
+            <ImageView
+                android:id="@+id/image_between_title_and_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/temmm"
+                android:scaleType="centerCrop" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="190dp"
+                android:fontFamily="@font/krubmedium"
+                android:text="วัดพระปฐมเจดีย์ราชวรมหาวิหาร"
+                android:textColor="#FF7352"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="320dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="500dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@android:color/white">
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/krub"
+                android:paddingTop="50dp"
+                android:padding="20dp"
+                android:text="       พระปฐมเจดีย์เป็นปูชนียสถานสำคัญในจังหวัดนครปฐม มีประวัติความเป็นมายาวนานตั้งแต่สมัยทวารวดี โดยในช่วงพุทธศตวรรษที่ 11 เมืองนครปฐมโบราณเป็นศูนย์กลางการค้าทางทะเลที่รุ่งเรือง มีเจดีย์ทรงกลมฐานสี่เหลี่ยมขนาดใหญ่ที่เรียกว่า มหาธาตุหลวง หรือ พระธม
+                                     ต่อมาในสมัยกรุงศรีอยุธยา เมืองนครปฐมโบราณเริ่มเสื่อมความสำคัญ แต่พระธมยังคงเป็นสถานที่ศักดิ์สิทธิ์ที่ผู้คนเดินทางมานมัสการ จนกระทั่งในปี พ.ศ. 2374 พระบาทสมเด็จพระจอมเกล้าเจ้าอยู่หัว (รัชกาลที่ 4) ขณะทรงผนวช ได้เสด็จธุดงค์มานมัสการสถูปเจดีย์ใหญ่เมืองนครไชยศรี และทรงเรียกชื่อว่า พระปฐมเจดีย์"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <!-- ปุ่มเมนู ซ้ายบน -->
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/backham"
+            android:src="@drawable/menu_icon"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="15dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="เมนู"
+            android:clickable="true"
+            android:focusable="true"/>
+
+
+
+    </RelativeLayout>
+
+    <!-- เมนูด้านข้าง -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/nav_menu_background"
+        app:itemTextAppearance="@style/NavigationViewTextSize"
+        app:itemVerticalPadding="24dp"
+        app:menu="@menu/navigation_menu"
+        app:headerLayout="@layout/nav_header"/>
+</androidx.drawerlayout.widget.DrawerLayout>

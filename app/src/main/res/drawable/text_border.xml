@@ -1,0 +1,8 @@
+<!-- res/drawable/text_border.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF" /> <!-- สีพื้นหลัง (สามารถเปลี่ยนได้) -->
+    <corners android:radius="30dp"/> <!-- ความโค้งของมุม -->
+    <stroke
+        android:color="#FFFFFF"
+        android:width="4dp" />
+</shape>

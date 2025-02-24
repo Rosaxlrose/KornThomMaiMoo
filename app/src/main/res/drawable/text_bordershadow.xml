@@ -1,0 +1,19 @@
+<!-- res/drawable/text_border_with_shadow.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- เงาด้านหลัง -->
+    <item>
+        <shape>
+            <solid android:color="#60000000"/> <!-- สีเงา (ใช้สีเทาอ่อนหรือสีดำโปร่งแสง) -->
+            <corners android:radius="30dp"/>
+            <padding android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp"/>
+        </shape>
+    </item>
+
+    <!-- กรอบด้านหน้า -->
+    <item android:right="2dp" android:left="2dp" android:top="2dp" android:bottom="2dp">
+        <shape>
+            <solid android:color="#FFFFFF"/> <!-- สีพื้นหลัง -->
+            <corners android:radius="30dp"/> <!-- ความโค้งของมุม -->
+        </shape>
+    </item>
+</layer-list>

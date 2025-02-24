@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!-- Dark Theme -->
+    <style name="Base.Theme.Nakornprathom" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#FF7352</item> <!-- สีส้ม -->
+        <item name="colorAccent">#FF7352</item> <!-- สีส้ม -->
+
+    </style>
+
+</resources>
