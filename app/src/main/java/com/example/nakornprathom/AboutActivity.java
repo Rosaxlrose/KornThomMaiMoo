@@ -1,4 +1,7 @@
 package com.example.nakornprathom;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -20,6 +23,7 @@ public class AboutActivity extends AppCompatActivity {
     private ImageButton menuButton;
     private TextView langTH, langCH, langEN;
     private Button startButton;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,12 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        // เชื่อมโยง UI เดิม
+        sharedPreferences = getSharedPreferences("AppSettings", MODE_PRIVATE);
+
+        // โหลดภาษาที่เลือกไว้ล่าสุด
+        loadLanguage();
+
+        // เชื่อมโยง UI
         langTH = findViewById(R.id.langTH);
         langCH = findViewById(R.id.langCH);
         langEN = findViewById(R.id.langEN);
@@ -50,25 +59,25 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
+                Intent intent = null;
+
                 if (id == R.id.nav_home) {
-                    // เปิด HomeActivity
-                    startActivity(new Intent(AboutActivity.this, HomeActivity.class));
+                    intent = new Intent(AboutActivity.this, HomeActivity.class);
                 } else if (id == R.id.nav_about) {
-                    // เปิด AboutActivity
-                    startActivity(new Intent(AboutActivity.this, AboutActivity.class));
+                    intent = new Intent(AboutActivity.this, AboutActivity.class);
                 } else if (id == R.id.nav_sakkara) {
-                    // เปิด sakkaraActivity
-                    startActivity(new Intent(AboutActivity.this, SakkaraActivity.class));
-                }else if (id == R.id.nav_prayer) {
-                    // เปิด prayerActivity
-                    startActivity(new Intent(AboutActivity.this, PrayerActivity.class));
-                }else if (id == R.id.nav_festival) {
-                    // เปิด festivalActivity
-                    startActivity(new Intent(AboutActivity.this, FestivalActivity.class));
-                }else if (id == R.id.nav_contact) {
-                    // เปิด contactActivity
-                    startActivity(new Intent(AboutActivity.this, ContactActivity.class));
+                    intent = new Intent(AboutActivity.this, SakkaraActivity.class);
+                } else if (id == R.id.nav_festival) {
+                    intent = new Intent(AboutActivity.this, FestivalActivity.class);
+                } else if (id == R.id.nav_contact) {
+                    intent = new Intent(AboutActivity.this, ContactActivity.class);
                 }
+
+                if (intent != null) {
+                    startActivity(intent);
+                    finish(); // ปิดหน้าเดิมเมื่อเปิดหน้าใหม่
+                }
+
                 drawerLayout.closeDrawers();
                 return true;
             }
@@ -76,19 +85,30 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     private void changeLanguage(String langCode) {
+        // บันทึกค่าภาษาใน SharedPreferences
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Selected_Language", langCode);
+        editor.apply();
+
+        // เปลี่ยนภาษา UI
         Locale locale = new Locale(langCode);
         Locale.setDefault(locale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
+        Configuration config = new Configuration();
         config.setLocale(locale);
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        Resources resources = getResources();
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
 
-        // อัปเดตข้อความใหม่
-        updateUI();
+        // รีโหลดหน้า
+        recreate();
     }
 
-    private void updateUI() {
-        titleText.setText(R.string.app_title);
-        subtitleText.setText(R.string.app_subtitle);
-        startButton.setText(R.string.start_button);
+    private void loadLanguage() {
+        String langCode = sharedPreferences.getString("Selected_Language", "th"); // ค่าเริ่มต้นเป็นไทย
+        Locale locale = new Locale(langCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        Resources resources = getResources();
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
     }
 }

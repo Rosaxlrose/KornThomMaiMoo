@@ -1,9 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Temple App</string>
-    <string name="app_title">大佛塔寺</string>
-    <string name="app_subtitle">(大佛塔)</string>
-    <string name="start_button">开始</string>
+    <string name="app_name">寺廟應用</string>
+    <string name="app_title">大寶森塔</string>
+    <string name="app_subtitle">（大寶森塔）</string>
+    <string name="start_button">開始</string>
+
+    <!-- Navigation Menu -->
+    <string name="nav_home">主頁</string>
+    <string name="nav_about">關於寺廟</string>
+    <string name="nav_sakkara">禮拜</string>
+    <string name="nav_prayer">祈禱</string>
+    <string name="nav_festival">重要節日</string>
+    <string name="nav_contact">聯繫我們</string>
+
+    <string name="title_history">历史</string>
+    <string name="title_temple">大宝森塔</string>
+
+    <string name="temple_info">
+        大宝森塔是泰国佛统府的重要宗教遗址。它的历史可以追溯到达婆罗时代。
+        在公元11世纪，古代佛统是一个繁荣的海上贸易中心，
+        这里有一座大型的四方形圆顶佛塔，称为“摩诃大塔”或“帕托姆”。
+
+        在大城王朝时期，古佛统城的地位逐渐衰落，
+        但帕托姆仍然是信徒朝圣的重要圣地。
+        1831年，拉玛四世国王（当时仍为僧侣）前往那空猜是大佛塔朝拜，
+        并称其为“大宝森塔”。
+    </string>
+
+    <string name="worship_points">寺庙内的礼拜点</string>
+    <string name="phra_pathom_chedi">大宝森塔</string>
+    <string name="point_1_info">第 1 点：“佛祖塔”被认为是泰国最大的一座佛塔，原名为“佛吞塔”。佛祖塔的历史悠久，可以追溯到素挝符时期。传说它是在阿育王时代由僧侣带到素挝符来传播佛教时建造的。佛祖塔是一座巨大的佛塔，呈倒钟形，原始结构是由木材构成的，用大铁链捆绑，外层用砖石建造。在第一次由拉玛四世（即尚在剃发的王子）修复时，曾遇见了这座老旧破损的佛塔，开始对其进行修缮。
+
+</string>
+    <string name="point_2">第 2 点</string>
+    <string name="menu">菜单</string>
+
+    <string name="phra_ruang">帕鲁昂·罗真阿里</string>
+    <string name="phra_ruang_info">
+        第 2 点：帕鲁昂·罗真阿里是一尊采用素可泰艺术风格的佛像，展示“阻止亲属争吵”的手势。
+        佛像立于黄铜莲花基座上，面容修长，双脚位置不对称。它深受佛教徒和佛教信徒的敬仰，
+        尤其是在那空巴吞府。 帕鲁昂·罗真阿里的全名为“帕鲁昂·罗真阿里·斯里因陀罗提·达摩帕特·玛哈瓦吉拉武·拉差普加尼皮特”，
+        这一名称出现在皇家公告中。然而，当地人通常称其为“龙波帕鲁昂”或简单地称为“帕鲁昂·罗真阿里”。
+    </string>
+    <string name="point_3">第 3 点</string>
+
+    <string name="shrine">帕拉萨通神庙</string>
+    <string name="shrine_info">
+        第 3 点：“帕拉萨通神庙” 位于回廊外，形似一个用于祭拜的洞穴。
+        附近是“虎神庙”，受到泰国华人的尊崇。
+    </string>
+    <string name="point_4">第 4 点</string>
+    <string name="back">返回</string>
+    <string name="back2">返回</string>
+    <string name="back3">返回</string>
+    <string name="back4">返回</string>
+
+    <string name="goddess_umadevi">乌玛女神</string>
+    <string name="goddess_umadevi_info">
+        第 4 点：靠近帕拉萨通神庙和虎神庙，您会发现“乌玛女神”。
+        游客可以进入并祈求祝福。
+    </string>
+    <string name="point_5">第 5 点</string>
+
+    <string name="event_title">佛陀舍利塔敬拜节</string>
+    <string name="event_date">每年举办，农历十二月十二日至四月（2024年11月12日至20日）</string>
+    <string name="event_location">佛统府佛陀舍利塔寺</string>
+    <string name="event_description">佛陀舍利塔敬拜节是佛统府佛陀舍利塔寺的年度节日。 每年农历十二月十二日至四月举行（2024年11月12日至20日）。 活动包括佛陀舍利塔绕袈裟游行、敬拜佛陀舍利、市场、娱乐表演和音乐会。</string>
+
+
+    <string name="golden_takian_cave">金色塔基安洞穴</string>
+    <string name="golden_takian_cave_info">
+        第 5 点：“金色塔基安洞穴” 具有相对宽敞的通道。
+        进入内部后，有两条分开的道路：玛哈乔克洞穴和南提普洞穴。
+    </string>
+
+    <string name="contact_title">旅行🚶‍</string>
+    <string name="travel_title">乘坐红线地铁 和 远程列车前往大塔寺</string>
+    <string name="step1_train">红线地铁（邦苏中央站 - Taling Chan 站）</string>
+    <string name="step1_detail">在邦苏中央站上车，前往 Taling Chan 站（9-10 号站台）</string>
+    <string name="step2_train">远程列车（Taling Chan - 佛统府）</string>
+    <string name="step2_detail">在 Taling Chan 枢纽站换乘远程列车，前往佛统府火车站</string>
+    <string name="step3_walk">步行至大塔寺</string>
+    <string name="step3_detail">穿过 Charoen Sattha 桥，抵达大塔寺</string>
 </resources>
-
-

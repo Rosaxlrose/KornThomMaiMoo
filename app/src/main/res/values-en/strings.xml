@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="app_name">Temple App</string>
-<string name="app_title">Wat Phra Pathom Chedi</string>
-<string name="app_subtitle">(Phra Pathom Chedi)</string>
-<string name="start_button">Start</string>
+    <string name="app_name">WATWAT</string>
+    <string name="app_title">Wat Phra Pathom Chedi</string>
+    <string name="app_subtitle">(Phra Pathom Chedi)</string>
+    <string name="start_button">Start</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_about">About</string>
+    <string name="nav_sakkara">Worship</string>
+    <string name="nav_prayer">Prayers</string>
+    <string name="nav_festival">Festivals</string>
+    <string name="nav_contact">Contact</string>
+
+    <string name="title_history">History</string>
+    <string name="title_temple">Wat Phra Pathom Chedi</string>
+    <string name="temple_info">
+        Phra Pathom Chedi is an important religious site in Nakhon Pathom Province.
+        It has a long history dating back to the Dvaravati period.
+        During the 11th Buddhist century, ancient Nakhon Pathom was a prosperous maritime trade center,
+        with a large square-based circular pagoda called "Maha That Luang" or "Phra Thom."
+
+        In the Ayutthaya period, the ancient city of Nakhon Pathom declined in importance,
+        but Phra Thom remained a sacred site for pilgrims.
+        In 1831, King Mongkut (Rama IV), while still a monk, visited the great stupa in Nakhon Chaisri
+        and called it "Phra Pathom Chedi."
+    </string>
+
+    <string name="worship_points">Worship Points in the Temple</string>
+    <string name="phra_pathom_chedi">Phra Pathom Chedi</string>
+    <string name="point_1_info">Point 1: "The Phra Pathom Chedi is the largest stupa in Thailand. It was originally known as the 'Phra Tham Chedi.' The history of the Phra Pathom Chedi dates back to the Suvarnabhumi period. It is believed to have been constructed during the time when the Buddhist missionaries of King Ashoka of India traveled to spread Buddhism to Suvarnabhumi. The Phra Pathom Chedi is a large stupa with an inverted bell shape. Its original structure was made of wooden logs, bound together with large chains, and built with bricks. It was later restored for the first time by King Rama IV (King Mongkut) while he was still a monk. During his pilgrimage, he encountered the Phra Pathom Chedi, which was in a dilapidated and deteriorating state."</string>
+    <string name="point_2">Point 2</string>
+    <string name="menu">Menu</string>
+
+    <string name="phra_ruang">Phra Ruang Rojanarith</string>
+    <string name="phra_ruang_info">
+        Point 2: Phra Ruang Rojanarith is a Buddha statue in the "Preventing Relatives' Quarrel" posture,
+        designed in the Sukhothai art style. The statue stands on a brass lotus base with an elongated face
+        and uneven feet positioning. It is highly revered by the people of Nakhon Pathom and Thai Buddhists nationwide.
+        The full name of Phra Ruang Rojanarith is "Phra Ruang Rojanarith Sri Intradit Dhammophat Mahavajiravudh Ratchapuchaneebpit,"
+        as declared in the royal proclamation. However, locals usually call it "Luang Pho Phra Ruang" or simply "Phra Ruang Rojanarith."
+    </string>
+    <string name="point_3">Point 3</string>
+
+    <string name="shrine">Phra Sat Thong Shrine</string>
+    <string name="shrine_info">
+        Point 3: "Phra Sat Thong Shrine" is located outside the cloister.
+        It resembles a cave, built for worship. Nearby is the "Tiger God Shrine,"
+        revered by Thai-Chinese people.
+    </string>
+    <string name="point_4">Point 4</string>
+    <string name="back">Back</string>
+    <string name="back2">Back</string>
+    <string name="back3">Back</string>
+    <string name="back4">Back</string>
+
+    <string name="goddess_umadevi">Goddess Uma Devi</string>
+    <string name="goddess_umadevi_info">
+        Point 4: Near the Phra Sat Thong Shrine and Tiger God Shrine,
+        you will find the "Goddess Uma Devi". Visitors can enter and pray for blessings.
+    </string>
+    <string name="point_5">Point 5</string>
+
+    <string name="golden_takian_cave">Golden Takian Cave</string>
+    <string name="golden_takian_cave_info">
+        Point 5: "Golden Takian Cave" has a relatively wide pathway.
+        Inside, there are two separate paths: Maha Chok Cave and Nam Thip Cave.
+    </string>
+    <string name="event_title">Phra Pathom Chedi Worship Fair</string>
+    <string name="event_date">Held annually from the 12th waxing moon to the 4th waning moon of the 12th lunar month (2024: November 12-20)</string>
+    <string name="event_location">Wat Phra Pathom Chedi, Nakhon Pathom</string>
+    <string name="event_description">The Phra Pathom Chedi Worship Fair is an annual festival held at Wat Phra Pathom Chedi in Nakhon Pathom. It takes place from the 12th waxing moon to the 4th waning moon of the 12th lunar month (2024: November 12-20). The event includes the robe procession around Phra Pathom Chedi, worshiping the Buddha s relics, a market, entertainment performances, and concerts.</string>
+
+
+    <string name="contact_title">Travel🚶‍♂</string>
+    <string name="travel_title">Travel by Red Line Train and Long-Distance Train</string>
+    <string name="step1_train">Red Line Train (Bang Sue Grand Station - Taling Chan)</string>
+    <string name="step1_detail">Board at Bang Sue Grand Station, travel to Taling Chan Station (Platform 9-10)</string>
+    <string name="step2_train">Feeder Train (Taling Chan - Nakhon Pathom)</string>
+    <string name="step2_detail">Transfer at Taling Chan Junction Station, travel to Nakhon Pathom Station</string>
+    <string name="step3_walk">Walk to Phra Pathom Chedi</string>
+    <string name="step3_detail">Cross the Charoen Sattha Bridge, arrive at Phra Pathom Chedi</string>
+
+
 </resources>

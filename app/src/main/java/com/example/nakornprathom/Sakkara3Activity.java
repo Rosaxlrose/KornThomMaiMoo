@@ -1,5 +1,10 @@
 package com.example.nakornprathom;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -19,18 +24,26 @@ public class Sakkara3Activity extends AppCompatActivity {
     private NavigationView navigationView;
     private ImageButton menuButton;
     private TextView langTH, langCH, langEN;
-    private Button startButton; // ปุ่มที่ใช้ไปหน้า Sakkara2Activity
+    private Button startButton, backButton;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPreferences = getSharedPreferences("AppSettings", MODE_PRIVATE);
+        loadLanguage(); // ✅ โหลดค่าภาษาก่อน UI
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sakkara3);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        // เชื่อมโยง UI เดิม
+        // เชื่อมโยง UI
+        titleText = findViewById(R.id.title);
+        subtitleText = findViewById(R.id.title2);
         langTH = findViewById(R.id.langTH);
         langCH = findViewById(R.id.langCH);
         langEN = findViewById(R.id.langEN);
+        startButton = findViewById(R.id.startButton);
+        backButton = findViewById(R.id.startButton2);
 
         // ตั้งค่าคลิกเปลี่ยนภาษา
         langTH.setOnClickListener(view -> changeLanguage("th"));
@@ -49,59 +62,88 @@ public class Sakkara3Activity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-                if (id == R.id.nav_home) {
-                    // เปิด HomeActivity
-                    startActivity(new Intent(Sakkara3Activity.this, HomeActivity.class));
-                } else if (id == R.id.nav_about) {
-                    // เปิด AboutActivity
-                    startActivity(new Intent(Sakkara3Activity.this, AboutActivity.class));
-                } else if (id == R.id.nav_sakkara) {
-                    // เปิด prayerActivity
-                    startActivity(new Intent(Sakkara3Activity.this, PrayerActivity.class));
-                }else if (id == R.id.nav_festival) {
-                    // เปิด festivalActivity
-                    startActivity(new Intent(Sakkara3Activity.this, FestivalActivity.class));
-                }else if (id == R.id.nav_contact) {
-                    // เปิด contactActivity
-                    startActivity(new Intent(Sakkara3Activity.this, ContactActivity.class));
+                Intent intent = null;
+
+                if (item.getItemId() == R.id.nav_home) {
+                    intent = new Intent(Sakkara3Activity.this, HomeActivity.class);
+                } else if (item.getItemId() == R.id.nav_about) {
+                    intent = new Intent(Sakkara3Activity.this, AboutActivity.class);
+                } else if (item.getItemId() == R.id.nav_sakkara) {
+                    intent = new Intent(Sakkara3Activity.this, SakkaraActivity.class);
+                } else if (item.getItemId() == R.id.nav_festival) {
+                    intent = new Intent(Sakkara3Activity.this, FestivalActivity.class);
+                } else if (item.getItemId() == R.id.nav_contact) {
+                    intent = new Intent(Sakkara3Activity.this, ContactActivity.class);
                 }
+
+                if (intent != null) {
+                    startActivity(intent);
+                    finish(); // ปิดหน้าเดิมเมื่อเปิดหน้าใหม่
+                }
+
                 drawerLayout.closeDrawers();
                 return true;
             }
         });
 
-        // เชื่อมโยงปุ่ม startButton กับ Intent ไปยังหน้า Sakkara2Activity
-        startButton = findViewById(R.id.startButton); // ตั้งค่าไอดีให้ตรงกับใน layout ของคุณ
+        // คลิกปุ่มไปหน้า Sakkara4Activity
         startButton.setOnClickListener(view -> {
-            // สร้าง Intent ไปยัง Sakkara2Activity
             Intent intent = new Intent(Sakkara3Activity.this, Sakkara4Activity.class);
-            startActivity(intent); // เริ่ม Activity ใหม่
+            startActivity(intent);
         });
-        // เชื่อมโยงปุ่ม startButton กับ Intent ไปยังหน้า Sakkara2Activity
-        startButton = findViewById(R.id.startButton2); // ตั้งค่าไอดีให้ตรงกับใน layout ของคุณ
-        startButton.setOnClickListener(view -> {
-            // สร้าง Intent ไปยัง Sakkara2Activity
+
+        // คลิกปุ่มกลับไป Sakkara2Activity
+        backButton.setOnClickListener(view -> {
             Intent intent = new Intent(Sakkara3Activity.this, Sakkara2Activity.class);
-            startActivity(intent); // เริ่ม Activity ใหม่
+            startActivity(intent);
+            finish();
         });
 
-    }
-
-    private void changeLanguage(String langCode) {
-        Locale locale = new Locale(langCode);
-        Locale.setDefault(locale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.setLocale(locale);
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-
-        // อัปเดตข้อความใหม่
+        // ✅ อัปเดต UI ให้ตรงกับค่าภาษาที่เลือก
         updateUI();
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences sharedPreferences = newBase.getSharedPreferences("AppSettings", MODE_PRIVATE);
+        String langCode = sharedPreferences.getString("Selected_Language", "th");
+        super.attachBaseContext(updateBaseContextLocale(newBase, langCode));
+    }
+
+    private static Context updateBaseContextLocale(Context context, String language) {
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Resources resources = context.getResources();
+        Configuration config = resources.getConfiguration();
+        config.setLocale(locale);
+        return context.createConfigurationContext(config);
+    }
+
+    private void changeLanguage(String langCode) {
+        // บันทึกค่าภาษาใน SharedPreferences
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Selected_Language", langCode);
+        editor.apply();
+
+        // รีโหลดหน้าใหม่
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+    private void loadLanguage() {
+        String langCode = sharedPreferences.getString("Selected_Language", "th");
+        Locale locale = new Locale(langCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+    }
+
     private void updateUI() {
-        titleText.setText(R.string.app_title);
-        subtitleText.setText(R.string.app_subtitle);
-        startButton.setText(R.string.start_button);
+        titleText.setText(R.string.worship_points);
+        subtitleText.setText(R.string.shrine);
+        startButton.setText(R.string.point_4);
+        backButton.setText(R.string.back);
     }
 }

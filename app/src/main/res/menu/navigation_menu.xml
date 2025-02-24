@@ -1,20 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:title="หน้าแรก" />
+        android:title="@string/nav_home" />
     <item
         android:id="@+id/nav_about"
-        android:title="เกี่ยวกับวัด"/>
+        android:title="@string/nav_about"/>
     <item
         android:id="@+id/nav_sakkara"
-        android:title="การสักการะ"/>
-    <item
-        android:id="@+id/nav_prayer"
-        android:title="บทสวดมนต์"/>
+        android:title="@string/nav_sakkara"/>
     <item
         android:id="@+id/nav_festival"
-        android:title="เทศกาลสำคัญ"/>
+        android:title="@string/nav_festival"/>
     <item
         android:id="@+id/nav_contact"
-        android:title="ติดต่อ"/>
+        android:title="@string/nav_contact"/>
 </menu>

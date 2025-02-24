@@ -73,14 +73,14 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="150dp"
                 android:fontFamily="@font/krubmedium"
-                android:text="จุดสักการะภายในวัด"
+                android:text="@string/worship_points"
                 android:textColor="#FF7352"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="150dp"
-                android:layout_height="250dp"
+                android:layout_width="200dp"
+                android:layout_height="260dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="230dp"
                 app:cardCornerRadius="20dp"
@@ -102,7 +102,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="190dp"
                 android:fontFamily="@font/krub"
-                android:text="องค์พระปฐมเจดีย์"
+                android:text="@string/phra_pathom_chedi"
                 android:textColor="#FF7352"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -123,7 +123,7 @@
                     android:fontFamily="@font/krub"
                     android:padding="20dp"
                     android:paddingTop="50dp"
-                    android:text="จุดที่ 1 “องค์พระปฐมเจดีย์” ถือเป็นพระมหาเจดีย์ที่มีขนาดใหญ่ที่สุดในประเทศไทย เดิมมีชื่อเรียกว่า “พระธมเจดีย์” ประวัติความเป็นมาขององค์พระปฐมเจดีย์มีมาอย่างยาวนานย้อนกลับไปถึงยุคสุวรรณภูมิ คาดว่าถูกสร้างขึ้นเมื่อคราวที่พระสมณทูตในพระเจ้าอโศกมหาราช เดินทางมาเผยแผ่ศาสนายังสุวรรณภูมิ องค์พระปฐมเจดีย์นั้นเป็นพระเจดีย์ขนาดใหญ่ รูปทรงระฆังคว่ำ โครงสร้างเดิมเป็นไม้ซุง รัดด้วยโซ่เส้นใหญ่ ก่อด้วยอิฐ ก่อนจะได้รับการปฏิสังขรณ์ในครั้งแรกโดยพระบาทสมเด็จพระจอมเกล้าเจ้าอยู่หัว (รัชกาลที่ 4) ขณะที่ทรงยังผนวชได้ธุดงค์และพบองค์พระปฐมเจดีย์ที่อยู่ในสภาพเก่าแก่ชำรุดทรุดโทรม"
+                    android:text="@string/point_1_info"
                     android:textSize="14sp"
                     android:textStyle="normal" />
             </androidx.cardview.widget.CardView>
@@ -141,17 +141,17 @@
             android:layout_marginStart="15dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:contentDescription="เมนู"
+            android:contentDescription="@string/menu"
             android:clickable="true"
             android:focusable="true"/>
 
         <Button
             android:id="@+id/startButton"
-            android:layout_width="80dp"
+            android:layout_width="110dp"
             android:layout_height="40dp"
             android:layout_marginTop="840dp"
-            android:layout_marginStart="300dp"
-            android:text="จุด 2"
+            android:layout_marginStart="280dp"
+            android:text="@string/point_2"
             android:textColor="#FFFFFF"
             android:background="@drawable/buttonbg" />
 
